@@ -16,18 +16,15 @@ public class e13q19 {
                 }
             }
     
-            // Swap the smallest element with the first element
             int temp = arr[start];
             arr[start] = arr[minIndex];
             arr[minIndex] = temp;
     
-            // If maxIndex is the same as start, maxIndex needs to be updated 
-            // because its value has been swapped.
+
             if (maxIndex == start) {
                 maxIndex = minIndex;
             }
     
-            // Swap the largest element with the last element
             temp = arr[end];
             arr[end] = arr[maxIndex];
             arr[maxIndex] = temp;

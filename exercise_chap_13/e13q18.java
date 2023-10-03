@@ -7,7 +7,6 @@ public class e13q18 {
                     maxIndex = j;
                 }
             }
-            // Swap the largest element with the last element
             int temp = arr[i];
             arr[i] = arr[maxIndex];
             arr[maxIndex] = temp;

@@ -365,10 +365,9 @@ public static double sumTo(int n) {
     }
 
     if (n == 0) {
-        return 0.0;  // Base case
+        return 0.0;  
     }
 
-    // Return the nth reciprocal plus the sum of the first (n-1) reciprocals
     return (1.0 / n) + sumTo(n - 1);
 }
 

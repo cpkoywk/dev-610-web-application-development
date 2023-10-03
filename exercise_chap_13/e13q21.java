@@ -2,7 +2,6 @@ import java.util.Random;
 
 public class e13q21 {
 
-    // Shuffle function from the previous answer
     public static void shuffle(int[] arr) {
         Random rand = new Random();
         for (int i = 0; i < arr.length; i++) {

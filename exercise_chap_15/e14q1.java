@@ -300,14 +300,17 @@ stack15.addAll(Arrays.asList(2,3,8,8,11,17,20,20));
             stack.push(queue.poll());
         }
         
+        // Move the remaining elements of the queue to the end
         for (int i = 0; i < size - k; i++) {
             queue.add(queue.poll());
         }
         
+        // Pop the elements from the stack back into the queue
         while (!stack.isEmpty()) {
             queue.add(stack.pop());
         }
         
+        // Transfer the remaining (original) elements from the end of the queue back to the front
         for (int i = 0; i < size - k; i++) {
             queue.add(queue.poll());
         }
@@ -335,7 +338,8 @@ stack15.addAll(Arrays.asList(2,3,8,8,11,17,20,20));
         Queue<Integer> q = new LinkedList<>();
 
         for (int i = 0; i < n; i++) {
-            q.add(s.remove(0));          }
+            q.add(s.remove(0));  // Assuming Stack supports remove. Otherwise, we need a different way to remove the bottom element.
+        }
 
         while (!s.isEmpty()) {
             q.add(s.pop());
@@ -420,10 +424,12 @@ stack15.addAll(Arrays.asList(2,3,8,8,11,17,20,20));
     public static void switchPairs(Stack<Integer> stack) {
         Queue<Integer> queue = new LinkedList<>();
 
+        // Step 1: Transfer from stack to queue.
         while (!stack.isEmpty()) {
             queue.add(stack.pop());
         }
 
+        // Step 2: Transfer pairs from queue to stack in reverse order.
         while (queue.size() > 1) {
             int first = queue.poll();
             int second = queue.poll();
@@ -431,14 +437,17 @@ stack15.addAll(Arrays.asList(2,3,8,8,11,17,20,20));
             stack.push(first);
         }
 
+        // Step 3: Transfer last element if odd number of elements.
         if (!queue.isEmpty()) {
             stack.push(queue.poll());
         }
 
+        // Step 4: Transfer from stack back to queue.
         while (!stack.isEmpty()) {
             queue.add(stack.pop());
         }
 
+        // Step 5: Transfer back from queue to stack.
         while (!queue.isEmpty()) {
             stack.push(queue.poll());
         }
@@ -559,6 +568,7 @@ stack15.addAll(Arrays.asList(2,3,8,8,11,17,20,20));
             q.add(s.pop());
         }
         
+        // Transfer the sums from the queue back to the stack (reverse order).
         while (!q.isEmpty()) {
             s.push(q.poll());
         }
@@ -610,6 +620,7 @@ while (!s.isEmpty()) {
     q.add(num);
 }
 
+// Transfer all elements from the queue back to the stack.
 while (!q.isEmpty()) {
     s.push(q.poll());
 }
